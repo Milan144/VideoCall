@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Call app</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  </head>
+  <style>
+    #mapContainer {
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+  <body>
+    <h1>Video Call App</h1>
+    <h2>Users locations</h2>
+    <div id="mapid" style="height: 360px; border: 4px solid black"></div>
+    <div id="accelerometerData">Loading accelerometer data...</div>
+
+    <h2 style="margin-top: 5%;">1.</h2>
+    <button id="webcamButton">START YOUR WEBCAM</button>
+
+    <h2 style="margin-top: 10%;">2.</h2>
+    <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+      <div>
+        <h2>Create a new Call</h2>
+        <button id="callButton" disabled>Create Call (offer)</button>
+      </div>
+    
+      <div>
+        <h2>Join a Call</h2>
+        <p>Answer a call with a code</p>
+        <input id="callInput" />
+        <button id="answerButton" disabled>Answer</button>
+      </div>
+    </div>
+
+    <div class="videos">
+      <span class="videoLocal">
+        <h3>Local stream</h3>
+        <video id="webcamVideo" autoplay playsinline></video>
+      </span>
+      <span class="videoRemote">
+        <h3>Remote Stream</h3>
+        <video id="remoteVideo" autoplay playsinline></video>
+      </span>
+    </div>
+
+    <h2 style="margin-top: 5%;">Users list</h2>
+    <ul id="usersList"></ul>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
